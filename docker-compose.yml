@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  baseball-front:
+    build:
+      context: "../baseball_front/docker"
+      dockerfile: "Dockerfile"
+    ports:
+      - 8080:8080
+    volumes:
+      - ../baseball_front/app:/src
+    tty: true
+    environment:
+      - NODE_ENV=development
